@@ -1,4 +1,6 @@
 ---
+import Menu from "./Menu.astro";
+
 const { logoSrc = "/logo.svg", title = "Catálogo" } = Astro.props;
 ---
 
@@ -6,5 +8,8 @@ const { logoSrc = "/logo.svg", title = "Catálogo" } = Astro.props;
   <div class="container header-inner">
     <img src={logoSrc} alt="Logo" class="logo" />
     <h1 class="site-title">{title}</h1>
+  </div>
+  <div class="container">
+    <Menu />
   </div>
 </header>

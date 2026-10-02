@@ -1,0 +1,17 @@
+---
+const items = [
+  { href: "/", label: "Inicio" },
+  { href: "/sobre-mi", label: "Sobre mí" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<nav class="menu">
+  <ul>
+    {items.map((item) => (
+      <li>
+        <a href={item.href}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import productos from "../../data/productos.json";
+
+export function getStaticPaths() {
+  return productos.map((p) => ({
+    params: { slug: p.slug },
+    props: { producto: p },
+  }));
+}
+
+const { producto } = Astro.props;
+const telefono = "56912345678";
+const mensaje = `Hola, me interesa el producto: ${producto.nombre}`;
+const waLink = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+---
+
+<BaseLayout title={producto.nombre}>
+  <Header logoSrc="/logo.svg" title="Catálogo" />
+
+  <main class="container">
+    <article class="producto-detalle">
+      <img
+        src={producto.imagen || "/img/placeholder.jpg"}
+        alt={producto.nombre}
+        class="producto-imagen"
+      />
+      <h1>{producto.nombre}</h1>
+      <p>{producto.descripcion}</p>
+      <p class="producto-precio">
+        Precio: {producto.precio} {producto.moneda}
+      </p>
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-button"
+      >
+        Pedir por WhatsApp
+      </a>
+    </article>
+  </main>
+
+  <Footer whatsapp={telefono} email="" />
+</BaseLayout>
+
+<style>
+  .producto-detalle {
+    max-width: 700px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .producto-imagen {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #eee;
+  }
+  .producto-precio {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+</style>

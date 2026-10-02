@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const TELEFONO_WHATSAPP = "56912345678"; // CAMBIA POR TU NÚMERO
+---
+
+<BaseLayout title="Sobre mí">
+  <Header logoSrc="/logo.svg" title="Catálogo" />
+
+  <main class="container pagina">
+    <h1>Sobre mí</h1>
+
+    <section class="contenido">
+      <p>
+        Hola, soy <strong>[tu nombre]</strong>. Aquí vendo productos seleccionados
+        con cuidado, enfocados en calidad y buen precio.
+      </p>
+
+      <p>
+        Este catálogo está pensado para que puedas ver los productos disponibles
+        y, si te interesa alguno, escribirme directamente por WhatsApp para
+        coordinar la compra.
+      </p>
+
+      <p>
+        Trabajo con envíos en <strong>[tu ciudad / región]</strong> y puedo
+        coordinar formas de pago y entrega de manera personalizada.
+      </p>
+
+      <p>
+        Si tienes alguna duda, no dudes en contactarme.
+      </p>
+    </section>
+  </main>
+
+  <Footer whatsapp={TELEFONO_WHATSAPP} email="" />
+</BaseLayout>

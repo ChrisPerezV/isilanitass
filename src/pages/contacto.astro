@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const TELEFONO_WHATSAPP = "56912345678"; // CAMBIA POR TU NÚMERO
+const EMAIL = "tuemail@ejemplo.com"; // OPCIONAL
+---
+
+<BaseLayout title="Contacto">
+  <Header logoSrc="/logo.svg" title="Catálogo" />
+
+  <main class="container pagina">
+    <h1>Contacto</h1>
+
+    <section class="contenido">
+      <p>
+        Si tienes alguna duda sobre los productos, precios, envíos o cualquier
+        otra consulta, puedes escribirme por WhatsApp o correo.
+      </p>
+
+      <ul class="lista-contacto">
+        <li>
+          <strong>WhatsApp:</strong>
+          <a
+            href={`https://wa.me/${TELEFONO_WHATSAPP}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir chat en WhatsApp
+          </a>
+        </li>
+        {EMAIL && (
+          <li>
+            <strong>Email:</strong>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </li>
+        )}
+      </ul>
+
+      <p>
+        Para consultas sobre un producto en particular, te recomiendo usar el
+        botón “Pedir por WhatsApp” desde la ficha del producto, así me llega
+        directamente el nombre del artículo que te interesa.
+      </p>
+    </section>
+  </main>
+
+  <Footer whatsapp={TELEFONO_WHATSAPP} email={EMAIL} />
+</BaseLayout>
