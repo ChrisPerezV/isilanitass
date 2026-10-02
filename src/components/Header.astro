@@ -1,0 +1,10 @@
+---
+const { logoSrc = "/logo.svg", title = "Catálogo" } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <img src={logoSrc} alt="Logo" class="logo" />
+    <h1 class="site-title">{title}</h1>
+  </div>
+</header>

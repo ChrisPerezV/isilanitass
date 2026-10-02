@@ -1,0 +1,22 @@
+---
+const { whatsapp = "", email = "" } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p>¿Te interesa algún producto? Escríbeme al WhatsApp.</p>
+    {whatsapp && (
+      <p>
+        <a
+          href={`https://wa.me/${whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="whatsapp-link"
+        >
+          Abrir chat en WhatsApp
+        </a>
+      </p>
+    )}
+    {email && <p>Email: {email}</p>}
+  </div>
+</footer>

@@ -1,0 +1,30 @@
+---
+const { producto, telefonoPaisNumero } = Astro.props;
+// telefonoPaisNumero ej: "56912345678" (sin +)
+
+const mensaje = `Hola, me interesa el producto: ${producto.nombre}`;
+const waLink = `https://wa.me/${telefonoPaisNumero}?text=${encodeURIComponent(mensaje)}`;
+---
+
+<article class="product-card">
+  <img
+    src={producto.imagen || "/img/placeholder.jpg"}
+    alt={producto.nombre}
+    class="product-image"
+  />
+  <div class="product-content">
+    <h3 class="product-name">{producto.nombre}</h3>
+    <p class="product-description">{producto.descripcion}</p>
+    <p class="product-price">
+      {producto.precio} {producto.moneda}
+    </p>
+    <a
+      href={waLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-button"
+    >
+      Pedir por WhatsApp
+    </a>
+  </div>
+</article>
