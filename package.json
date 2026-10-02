@@ -1,5 +1,5 @@
 {
-  "name": "tu-catalogo",
+  "name": "isilanitass",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -8,6 +8,6 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "astro": "5.0.0"
   }
 }
