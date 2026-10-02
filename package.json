@@ -1,5 +1,5 @@
 {
-  "name": "isilanitass",
+  "name": "tu-catalogo",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -9,8 +9,5 @@
   },
   "dependencies": {
     "astro": "^5.0.0"
-  },
-  "devDependencies": {
-    "@astrojs/github-pages": "^5.0.0"
   }
 }
