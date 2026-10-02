@@ -2,7 +2,7 @@
   {
     "id": "1",
     "slug": "perfume-floral",
-    "nombre": "Perfume Floral",
+    "nombre": "Perfume F",
     "descripcion": "Notas florales con toque cítrico. Ideal para uso diario.",
     "precio": "45000",
     "moneda": "CLP",
