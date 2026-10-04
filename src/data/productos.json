@@ -1,12 +1,12 @@
 [
   {
     "id": "1",
-    "slug": "amigurumi-osito",
-    "nombre": "Osito amigurumi",
+    "slug": "amigurumi-gallina",
+    "nombre": "Amigurumi de Gallina",
     "descripcion": "Muñeco tejido a mano, ideal para regalar.",
-    "precio": "25000",
+    "precio": "$25.000",
     "moneda": "CLP",
-    "imagen": "/img/osito.jpg",
+    "imagen": "/img/amigurimu1.jpg",
     "categoria": "amigurumi",
     "destacado": true
   },
@@ -15,9 +15,9 @@
     "slug": "figura-corzón",
     "nombre": "Corazón de acrílico",
     "descripcion": "Figura decorativa en acrílico, diseño moderno.",
-    "precio": "18000",
+    "precio": "$18.000",
     "moneda": "CLP",
-    "imagen": "/img/corazon.jpg",
+    "imagen": "/img/corazonacrilico.jpg",
     "categoria": "acrilico",
     "destacado": false
   }
