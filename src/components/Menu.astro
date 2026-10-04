@@ -1,9 +1,11 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const items = [
-  { href: "/", label: "Inicio" },
-  { href: "/amigurumis", label: "Amigurumis" },
-  { href: "/acrilicos", label: "Figuras de acrílico" },
-  { href: "/presentacion", label: "Presentación" },
+  { href: base, label: "Inicio" },
+  { href: `${base}amigurumis`, label: "Amigurumis" },
+  { href: `${base}acrilicos`, label: "Figuras de acrílico" },
+  { href: `${base}presentacion`, label: "Presentación" },
 ];
 ---
 

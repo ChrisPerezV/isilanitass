@@ -452,3 +452,9 @@ h1.pagina-titulo {
   font-size: 1.3rem;
   color: var(--gold-light);
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

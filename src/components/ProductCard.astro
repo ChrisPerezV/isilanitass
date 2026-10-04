@@ -1,22 +1,30 @@
 ---
 const { producto, telefonoPaisNumero } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
+const imagen = producto.imagen
+  ? `${base}${producto.imagen.replace(/^\//, "")}`
+  : `${base}img/placeholder.jpg`;
+
 const mensaje = `Hola, me interesa el producto: ${producto.nombre}`;
 const waLink = `https://wa.me/${telefonoPaisNumero}?text=${encodeURIComponent(mensaje)}`;
 ---
 
 <article class="product-card">
   <img
-    src={producto.imagen || "/img/placeholder.jpg"}
+    src={imagen}
     alt={producto.nombre}
     class="product-image"
   />
+
   <div class="product-content">
     <h3 class="product-name">{producto.nombre}</h3>
     <p class="product-description">{producto.descripcion}</p>
+
     <p class="product-price">
       {producto.precio} {producto.moneda}
     </p>
+
     <a
       href={waLink}
       target="_blank"
