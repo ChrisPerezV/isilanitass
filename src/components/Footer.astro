@@ -1,13 +1,10 @@
 ---
 const { whatsapp = "", instagram = "" } = Astro.props;
 
-const waLink = whatsapp
-  ? `https://wa.me/${whatsapp}`
-  : null;
-
+const waLink = whatsapp ? `https://wa.me/${whatsapp}` : "#";
 const igLink = instagram
   ? `https://instagram.com/${instagram.replace(/^@/, "")}`
-  : null;
+  : "#";
 ---
 
 <footer class="site-footer">
@@ -15,31 +12,10 @@ const igLink = instagram
     <p>
       ¿Te interesa algún producto? Escríbeme por WhatsApp o sígueme en Instagram.
     </p>
-
-    {(waLink || igLink) && (
-      <p class="footer-links">
-        {waLink && (
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-        )}
-
-        {waLink && igLink && <span aria-hidden="true"> • </span>}
-
-        {igLink && (
-          <a
-            href={igLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-        )}
-      </p>
-    )}
+    <p>
+      <a href={waLink} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      {whatsapp && instagram && " • "}
+      <a href={igLink} target="_blank" rel="noopener noreferrer">Instagram</a>
+    </p>
   </div>
 </footer>

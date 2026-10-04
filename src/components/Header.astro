@@ -3,7 +3,6 @@ import Menu from "./Menu.astro";
 
 const {
   logoSrc,
-  title = "Isilanitass",
   whatsapp = "",
   instagram = "",
 } = Astro.props;
@@ -16,11 +15,13 @@ const logoUrl = logoSrc
     : logoSrc
   : `${base}logo.svg`;
 
-const waLink = whatsapp ? `https://wa.me/${whatsapp}` : "#";
+const waLink = whatsapp
+  ? `https://wa.me/${whatsapp}`
+  : null;
 
 const igLink = instagram
   ? `https://instagram.com/${instagram.replace(/^@/, "")}`
-  : "#";
+  : null;
 ---
 
 <header class="site-header">
@@ -30,18 +31,18 @@ const igLink = instagram
         <a
           href={base}
           class="brand-link"
-          aria-label="Ir al inicio de Isilanitass"
+          aria-label="Ir al inicio"
         >
           <img
             src={logoUrl}
-            alt={`Logo de ${title}`}
+            alt="Logo de la tienda"
             class="logo"
           />
         </a>
       </div>
 
       <div class="header-actions">
-        {whatsapp && (
+        {waLink && (
           <a
             href={waLink}
             target="_blank"
@@ -52,7 +53,7 @@ const igLink = instagram
           </a>
         )}
 
-        {instagram && (
+        {igLink && (
           <a
             href={igLink}
             target="_blank"
