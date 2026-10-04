@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <!-- Fondo opcional: comentar o borrar si quieres fondo transparente -->
+  <!-- <rect width="400" height="120" fill="#0b0b0c" rx="16" /> -->
+
+  <!-- Borde dorado suave -->
+  <rect x="2" y="2" width="396" height="116" fill="none" stroke="#d4af37" stroke-width="3" rx="14" />
+
+  <!-- Texto principal en degradado dorado -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5e6c8" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#b08d57" />
+    </linearGradient>
+  </defs>
+
+  <text
+    x="200"
+    y="72"
+    text-anchor="middle"
+    fill="url(#goldGradient)"
+    font-size="48"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="800"
+    letter-spacing="2"
+  >
+    ISILANITASS
+  </text>
+
+  <!-- Línea decorativa dorada debajo del texto -->
+  <line x1="60" y1="88" x2="340" y2="88" stroke="#d4af37" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Pequeño detalle: círculo dorado al centro -->
+  <circle cx="200" cy="88" r="4" fill="#f5e6c8" />
+</svg>
