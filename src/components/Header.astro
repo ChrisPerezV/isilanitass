@@ -9,13 +9,15 @@ const {
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
+
 const logoUrl = logoSrc
   ? logoSrc.startsWith("/")
     ? `${base}${logoSrc.replace(/^\//, "")}`
     : logoSrc
-  : `${base}logo.svg`;
+  : `${base}img/logo.svg`;
 
 const waLink = whatsapp ? `https://wa.me/${whatsapp}` : "#";
+
 const igLink = instagram
   ? `https://instagram.com/${instagram.replace(/^@/, "")}`
   : "#";
@@ -25,8 +27,25 @@ const igLink = instagram
   <div class="container">
     <div class="header-top">
       <div class="brand">
-        <img src={logoUrl} alt={`Logo de ${title}`} class="logo" />
-        <span class="site-title">{title}</span>
+        <a
+          href={base}
+          class="brand-link"
+          aria-label="Ir al inicio de Isilanitass"
+        >
+          <img
+            src={logoUrl}
+            alt={`Logo de ${title}`}
+            class="logo"
+          />
+        </a>
+
+        <a
+          href={base}
+          class="site-title"
+          aria-label="Ir al inicio de Isilanitass"
+        >
+          {title}
+        </a>
       </div>
 
       <div class="header-actions">
