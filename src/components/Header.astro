@@ -1,15 +1,45 @@
 ---
 import Menu from "./Menu.astro";
 
-const { logoSrc = "/logo.svg", title = "Catálogo" } = Astro.props;
+const {
+  logoSrc = "/logo.svg",
+  title = "Isilanitass",
+  whatsapp = "56912345678",
+  instagram = "tu_usuario_instagram",
+} = Astro.props;
+
+const waLink = `https://wa.me/${whatsapp}`;
+const igLink = `https://instagram.com/${instagram.replace(/^@/, "")}`;
 ---
 
 <header class="site-header">
-  <div class="container header-inner">
-    <img src={logoSrc} alt="Logo" class="logo" />
-    <h1 class="site-title">{title}</h1>
-  </div>
   <div class="container">
+    <div class="header-top">
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <img src={logoSrc} alt="Logo" class="logo" />
+        <h1 class="site-title">{title}</h1>
+      </div>
+
+      <div class="header-actions">
+        <a
+          href={waLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-social btn-whatsapp"
+        >
+          WhatsApp
+        </a>
+        <a
+          href={igLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-social"
+        >
+          Instagram
+        </a>
+      </div>
+    </div>
+
     <Menu />
   </div>
 </header>

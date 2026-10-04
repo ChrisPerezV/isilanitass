@@ -1,6 +1,5 @@
 ---
 const { producto, telefonoPaisNumero } = Astro.props;
-// telefonoPaisNumero ej: "56912345678" (sin +)
 
 const mensaje = `Hola, me interesa el producto: ${producto.nombre}`;
 const waLink = `https://wa.me/${telefonoPaisNumero}?text=${encodeURIComponent(mensaje)}`;

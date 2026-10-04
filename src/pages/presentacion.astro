@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const TELEFONO_WHATSAPP = "56912345678";
+const INSTAGRAM = "tu_usuario_instagram";
+---
+
+<BaseLayout title="Presentación - Isilanitass">
+  <Header
+    logoSrc="/logo.svg"
+    title="Isilanitass"
+    whatsapp={TELEFONO_WHATSAPP}
+    instagram={INSTAGRAM}
+  />
+
+  <main class="container pagina">
+    <h1 class="pagina-titulo">Sobre mí y mi trabajo</h1>
+
+    <section class="contenido">
+      <p>
+        Hola, soy <strong>[tu nombre]</strong>. Creé Isilanitass para compartir
+        mis creaciones hechas a mano: amigurumis y figuras de acrílico diseñadas
+        con dedicación y cariño.
+      </p>
+
+      <p>
+        Cada pieza es única y está elaborada pensando en los detalles, usando
+        materiales de buena calidad para que duren en el tiempo.
+      </p>
+
+      <p>
+        Si te gusta algo del catálogo o tienes una idea personalizada, puedes
+        escribirme por WhatsApp o Instagram. Con gusto te ayudo a coordinar tu
+        compra o un diseño especial.
+      </p>
+
+      <ul class="lista-contacto">
+        <li>
+          <strong>WhatsApp:</strong>
+          <a
+            href={`https://wa.me/${TELEFONO_WHATSAPP}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir chat en WhatsApp
+          </a>
+        </li>
+        <li>
+          <strong>Instagram:</strong>
+          <a
+            href={`https://instagram.com/${INSTAGRAM.replace(/^@/, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @{INSTAGRAM.replace(/^@/, "")}
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer whatsapp={TELEFONO_WHATSAPP} instagram={INSTAGRAM} />
+</BaseLayout>

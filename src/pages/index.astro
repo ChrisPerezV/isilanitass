@@ -5,23 +5,108 @@ import Footer from "../components/Footer.astro";
 import ProductCard from "../components/ProductCard.astro";
 import productos from "../data/productos.json";
 
-// CONFIGURA AQUÍ TU NÚMERO DE WHATSAPP (sin +)
+// CONFIGURA AQUÍ TUS DATOS
 const TELEFONO_WHATSAPP = "56912345678";
+const INSTAGRAM = "tu_usuario_instagram";
+
+// Filtrar por categoría (agrega el campo "categoria" en productos.json)
+const amigurumis = productos.filter((p) => p.categoria === "amigurumi");
+const acrilico = productos.filter((p) => p.categoria === "acrilico");
 ---
 
-<BaseLayout title="Catálogo de Productos">
-  <Header logoSrc="/logo.svg" title="Catálogo" />
+<BaseLayout title="Isilanitass - Catálogo de productos">
+  <Header
+    logoSrc="/logo.svg"
+    title="Isilanitass"
+    whatsapp={TELEFONO_WHATSAPP}
+    instagram={INSTAGRAM}
+  />
 
-  <main class="container">
-    <section class="gallery">
-      {productos.map((p) => (
-        <ProductCard
-          producto={p}
-          telefonoPaisNumero={TELEFONO_WHATSAPP}
-        />
-      ))}
-    </section>
-  </main>
+  <!-- Hero / Presentación -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Amigurumis y figuras de acrílico hechos con amor</h1>
+        <p>
+          Piezas únicas, diseñadas y elaboradas a mano. Elige tu favorito y
+          escríbeme directamente por WhatsApp para coordinar tu compra.
+        </p>
+        <div class="hero-cta">
+          <a
+            href={`https://wa.me/${TELEFONO_WHATSAPP}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Pedir por WhatsApp
+          </a>
+          <a
+            href={`https://instagram.com/${INSTAGRAM.replace(/^@/, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline"
+          >
+            Ver Instagram
+          </a>
+        </div>
+      </div>
 
-  <Footer whatsapp={TELEFONO_WHATSAPP} email="" />
+      <div class="hero-img">
+        <!-- Cambia esta imagen por una foto destacada de tus productos -->
+        <img src="/img/hero.jpg" alt="Productos destacados" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Amigurumis -->
+  <section id="amigurumis" class="section">
+    <div class="container">
+      <h2 class="section-title">Amigurumis</h2>
+      <p class="section-subtitle">
+        Muñecos tejidos a mano, perfectos para regalar o coleccionar.
+      </p>
+
+      {amigurumis.length > 0 ? (
+        <section class="gallery">
+          {amigurumis.map((p) => (
+            <ProductCard
+              producto={p}
+              telefonoPaisNumero={TELEFONO_WHATSAPP}
+            />
+          ))}
+        </section>
+      ) : (
+        <p style="color: var(--text-muted)">
+          Pronto más amigurumis. Escríbeme si buscas algo en especial.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <!-- Figuras de acrílico -->
+  <section id="acrilico" class="section">
+    <div class="container">
+      <h2 class="section-title">Figuras de acrílico</h2>
+      <p class="section-subtitle">
+        Diseños modernos y decorativos en acrílico de calidad.
+      </p>
+
+      {acrilico.length > 0 ? (
+        <section class="gallery">
+          {acrilico.map((p) => (
+            <ProductCard
+              producto={p}
+              telefonoPaisNumero={TELEFONO_WHATSAPP}
+            />
+          ))}
+        </section>
+      ) : (
+        <p style="color: var(--text-muted)">
+          Pronto más figuras de acrílico. Escríbeme si buscas algo en especial.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <Footer whatsapp={TELEFONO_WHATSAPP} instagram={INSTAGRAM} />
 </BaseLayout>
