@@ -3,6 +3,7 @@ import Menu from "./Menu.astro";
 
 const {
   logoSrc,
+  title = "Isilanitass",
   whatsapp = "",
   instagram = "",
 } = Astro.props;
@@ -36,14 +37,6 @@ const igLink = instagram
             alt={`Logo de ${title}`}
             class="logo"
           />
-        </a>
-
-        <a
-          href={base}
-          class="site-title"
-          aria-label="Ir al inicio de Isilanitass"
-        >
-          {title}
         </a>
       </div>
 
